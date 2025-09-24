@@ -158,6 +158,89 @@ Relative path does not start with root `/`
 None.
 ##
 ## explicit relative paths, from /
+Invoking a program by using `.` in relative paths.
+
+### Solve
+First, I changed my directory to the root `/`. Then, since we had to use `.`, I wrote `./challenge/run`
+
+**Flag** `pwn.college{sfKN5BV1xfCXUNTCfJQpaKZhkfG.QXwUTN0wSO2gjNzEzW}`
+```bash
+hacker@paths~explicit-relative-paths-from-:~$ ./challenge/run/.
+bash: ./challenge/run/.: No such file or directory
+hacker@paths~explicit-relative-paths-from-:~$ cd /
+hacker@paths~explicit-relative-paths-from-:/$ challenge/.
+bash: challenge/.: Is a directory
+hacker@paths~explicit-relative-paths-from-:/$ challenge/run
+Incorrect...
+This challenge must be called with a relative path that explicitly starts with a `.`!
+hacker@paths~explicit-relative-paths-from-:/$ ./challenge/run
+Correct!!!
+./challenge/run is a relative path, invoked from the right directory!
+Here is your flag:
+pwn.college{sfKN5BV1xfCXUNTCfJQpaKZhkfG.QXwUTN0wSO2gjNzEzW}
+```
+### New Learnings
+`.` refers to the same directory.
+
+### References
+None.
+##
+## implicit relative path
+Invoking the `run` program from the `challenge` directory using relative paths.
+
+### Solve
+First, I changed my directory to the `challenge` directory, then used relative path to invoke the `run` program.
+**Flag** `pwn.college{AWuc0n1gNy0k-Rp-1q70sv9KsTM.QXxUTN0wSO2gjNzEzW}`
+
+```bash
+hacker@paths~implicit-relative-path:~$ cd /challenge
+hacker@paths~implicit-relative-path:/challenge$ run
+bash: run: command not found
+hacker@paths~implicit-relative-path:/challenge$ ./run
+Correct!!!
+./run is a relative path, invoked from the right directory!
+Here is your flag:
+pwn.college{AWuc0n1gNy0k-Rp-1q70sv9KsTM.QXxUTN0wSO2gjNzEzW}
+```
+### New Learnings
+Linux doesn't look at the current directory when we provide a 'naked' path as programs with the same name as core system utilities could be executed.
+<br> Core System utilities are programs that do essential functions. Eg: ls, cat, cp, touch etc.
+
+### References
+https://en.wikipedia.org/wiki/GNU_Core_Utilities
+##
+## home sweet home
+### Solve
+Argument must have been an absolute path and the path should've been inside the home directory.
+Hence, I used `~`.
+<br>It was also mentioned that the argument must be three characters.
+
+**Flag** `pwn.college{sdQ605-h7qaVS16cTfP044Mphtj.QXzMDO0wSO2gjNzEzW}`
+
+```bash
+hacker@paths~home-sweet-home:~$ /challenge/run ~
+Writing the file to /home/hacker!
+/challenge/run: line 29: /home/hacker: Is a directory
+... and reading it back to you:
+cat: /home/hacker: Is a directory
+hacker@paths~home-sweet-home:~$ ls
+hacker@paths~home-sweet-home:~$ /challenge/run ~/challenge/run
+The argument you provided must not have been longer than 3 characters (it's 
+currently 15 characters long)!
+hacker@paths~home-sweet-home:~$ /challenge/run ../
+The argument you provided is not an absolute path!
+hacker@paths~home-sweet-home:~$ /challenge/run ~/~
+Writing the file to /home/hacker/~!
+... and reading it back to you:
+pwn.college{sdQ605-h7qaVS16cTfP044Mphtj.QXzMDO0wSO2gjNzEzW}
+```
+
+## New Learnings
+`~` expansion is an absolute path
+<br>Only the leading `~` is expanded.
+
+## References
+None.
 
 
 
