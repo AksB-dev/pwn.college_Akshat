@@ -323,9 +323,120 @@ None.
 ## finding files
 Introduction to `find` command
 ### Solve
-Used `find` command to look a for a file
+Used `find` command to look a for the specified file
 
-**Flag** `
+**Flag** `pwn.college{A_qADoLCWKRj9ZnsRtGeJ296VKb.QXyMDO0wSO2gjNzEzW}`
 
+```bash
+hacker@commands~finding-files:~$ find / -name flag
+find: ‘/root’: Permission denied
+find: ‘/etc/ssl/private’: Permission denied
+find: ‘/tmp/tmp.TpSOPGOVKK’: Permission denied
+/usr/local/lib/python3.8/dist-packages/pwnlib/flag
+/usr/lib/python3/dist-packages/docutils/writers/flag
+find: ‘/var/cache/apt/archives/partial’: Permission denied
+find: ‘/var/cache/ldconfig’: Permission denied
+find: ‘/var/cache/private’: Permission denied
+find: ‘/var/log/private’: Permission denied
+find: ‘/var/log/apache2’: Permission denied
+find: ‘/var/log/mysql’: Permission denied
+find: ‘/var/lib/apt/lists/partial’: Permission denied
+find: ‘/var/lib/mysql-keyring’: Permission denied
+find: ‘/var/lib/php/sessions’: Permission denied
+find: ‘/var/lib/private’: Permission denied
+find: ‘/var/lib/mysql-files’: Permission denied
+find: ‘/var/lib/mysql’: Permission denied
+find: ‘/run/mysqld’: Permission denied
+find: ‘/run/sudo’: Permission denied
+find: ‘/proc/tty/driver’: Permission denied
+find: ‘/proc/1/task/1/fd’: Permission denied
+find: ‘/proc/1/task/1/fdinfo’: Permission denied
+find: ‘/proc/1/task/1/ns’: Permission denied
+find: ‘/proc/1/fd’: Permission denied
+find: ‘/proc/1/map_files’: Permission denied
+find: ‘/proc/1/fdinfo’: Permission denied
+find: ‘/proc/1/ns’: Permission denied
+find: ‘/proc/7/task/7/fd’: Permission denied
+find: ‘/proc/7/task/7/fdinfo’: Permission denied
+find: ‘/proc/7/task/7/ns’: Permission denied
+find: ‘/proc/7/fd’: Permission denied
+find: ‘/proc/7/map_files’: Permission denied
+find: ‘/proc/7/fdinfo’: Permission denied
+find: ‘/proc/7/ns’: Permission denied
+/opt/pwndbg/.venv/lib/python3.8/site-packages/pwnlib/flag
+/nix/store/7ns27apnvn4qj4q5c82x0z1lzixrz47p-radare2-5.9.8/share/radare2/5.9.8/flag
+/nix/store/5z3sjp9r463i3siif58hq5wj5jmy5m98-python3.12-pwntools-4.13.1/lib/python3.12/site-packages/pwnlib/flag
+/nix/store/5n5lp1m8gilgrsriv1f2z0jdjk50ypcn-rizin-0.7.3/share/rizin/flag
+/nix/store/h88mxp2mbgyj06vypwmqpy05idhwimnp-python3.13-pwntools-4.14.1/lib/python3.13/site-packages/pwnlib/flag
+/nix/store/s8b49lb0pqwvw0c6kgjbxdwxcv2bp0x4-radare2-5.9.8/share/radare2/5.9.8/flag
+/nix/store/bnlabj2vsbljhp597ir29l51nrqhm89w-rizin-0.7.4/share/rizin/flag
+/nix/store/1hyxipvwpdpcxw90l5pq1nvd6s6jdi5m-python3.12-pwntools-4.14.1/lib/python3.12/site-packages/pwnlib/flag
+/nix/store/5qz6hgb1qzpvjrsw20wyiylx5zw8b9bk-pwntools-4.14.0/lib/python3.13/site-packages/pwnlib/flag
+hacker@commands~finding-files:~$ cat /nix/store/7ns27apnvn4qj4q5c82x0z1lzixrz47p-radare2-5.9.8/share/radare2/5.9.8/flag
+cat: /nix/store/7ns27apnvn4qj4q5c82x0z1lzixrz47p-radare2-5.9.8/share/radare2/5.9.8/flag: Is a directory
+hacker@commands~finding-files:~$ cat /nix/store/5z3sjp9r463i3siif58hq5wj5jmy5m98-python3.12-pwntools-4.13.1/lib/python3.12/site-packages/pwnlib/flag
+cat: /nix/store/5z3sjp9r463i3siif58hq5wj5jmy5m98-python3.12-pwntools-4.13.1/lib/python3.12/site-packages/pwnlib/flag: Is a directory
+hacker@commands~finding-files:~$ cat /nix/store/5n5lp1m8gilgrsriv1f2z0jdjk50ypcn-rizin-0.7.3/share/rizin/flag
+cat: /nix/store/5n5lp1m8gilgrsriv1f2z0jdjk50ypcn-rizin-0.7.3/share/rizin/flag: Is a directory
+hacker@commands~finding-files:~$ cat /nix/store/h88mxp2mbgyj06vypwmqpy05idhwimnp-python3.13-pwntools-4.14.1/lib/python3.13/site-packages/pwnlib/flag
+cat: /nix/store/h88mxp2mbgyj06vypwmqpy05idhwimnp-python3.13-pwntools-4.14.1/lib/python3.13/site-packages/pwnlib/flag: Is a directory
+hacker@commands~finding-files:~$ cat /nix/store/s8b49lb0pqwvw0c6kgjbxdwxcv2bp0x4-radare2-5.9.8/share/radare2/5.9.8/flag
+cat: /nix/store/s8b49lb0pqwvw0c6kgjbxdwxcv2bp0x4-radare2-5.9.8/share/radare2/5.9.8/flag: Is a directory
+hacker@commands~finding-files:~$ cat /nix/store/bnlabj2vsbljhp597ir29l51nrqhm89w-rizin-0.7.4/share/rizin/flag
+cat: /nix/store/bnlabj2vsbljhp597ir29l51nrqhm89w-rizin-0.7.4/share/rizin/flag: Is a directory
+hacker@commands~finding-files:~$ cat /nix/store/1hyxipvwpdpcxw90l5pq1nvd6s6jdi5m-python3.12-pwntools-4.14.1/lib/python3.12/site-packages/pwnlib/flag
+cat: /nix/store/1hyxipvwpdpcxw90l5pq1nvd6s6jdi5m-python3.12-pwntools-4.14.1/lib/python3.12/site-packages/pwnlib/flag: Is a directory
+hacker@commands~finding-files:~$ cat /nix/store/5qz6hgb1qzpvjrsw20wyiylx5zw8b9bk-pwntools-4.14.0/lib/python3.13/site-packages/pwnlib/flag
+cat: /nix/store/5qz6hgb1qzpvjrsw20wyiylx5zw8b9bk-pwntools-4.14.0/lib/python3.13/site-packages/pwnlib/flag: Is a directory
+hacker@commands~finding-files:~$ cat /usr/local/lib/python3.8/dist-packages/pwnlib/flag
+cat: /usr/local/lib/python3.8/dist-packages/pwnlib/flag: Is a directory
+hacker@commands~finding-files:~$ cd /usr/local/lib/python3.8/dist-packages/pwnlib/flag
+hacker@commands~finding-files:/usr/local/lib/python3.8/dist-packages/pwnlib/flag$ flag
+bash: flag: command not found
+hacker@commands~finding-files:/usr/local/lib/python3.8/dist-packages/pwnlib/flag$ cat flag
+cat: flag: No such file or directory
+hacker@commands~finding-files:/usr/local/lib/python3.8/dist-packages/pwnlib/flag$ cd /
+hacker@commands~finding-files:/$ cat /usr/lib/python3/dist-packages/docutils/writers/flag
+pwn.college{A_qADoLCWKRj9ZnsRtGeJ296VKb.QXyMDO0wSO2gjNzEzW}
+```
+
+### New Learnings
+`find` command is used to find files in a specific directory
+<br>We can filter by name using `-name` 
+
+### References
+None.
+##
+## linking files
+Introduction to linking files
+### Solve
+The file was already existing so I deleted it to create a symbolic link to the `/flag` file.
+
+**Flag** `pwn.college{Msm1AmkloKur_xPzPPeyBBG6VNa.QX5ETN1wSO2gjNzEzW}`
+```bash
+hacker@commands~linking-files:~$ ln -s /flag ~/not-the-flag 
+ln: failed to create symbolic link '/home/hacker/not-the-flag': File exists
+hacker@commands~linking-files:~$ rm ~/not-the-flag 
+hacker@commands~linking-files:~$ ln -s /flag ~/not-the-flag 
+hacker@commands~linking-files:~$ challenge/catflag 
+bash: challenge/catflag: No such file or directory
+hacker@commands~linking-files:~$ /challenge/catflag 
+About to read out the /home/hacker/not-the-flag file!
+pwn.college{Msm1AmkloKur_xPzPPeyBBG6VNa.QX5ETN1wSO2gjNzEzW}
+hacker@commands~linking-files:~$ file /flag
+/flag: regular file, no read permission
+hacker@commands~linking-files:~$ file ~/not-the-flag 
+/home/hacker/not-the-flag: symbolic link to /flag
+```
+### New Learnings
+A file is basically an address of the contents of the file.
+A hard link is another address that indexes that address(accesses the hard link and the file are identical).
+<br>
+A symbolic link (also called soft link) contains the original file name, on accessing the symbolic link, the terminal will get the original file name and it will access the data of the orignal file.
+
+### References
+https://youtu.be/m55AtwjBXpE?list=PL-ymxv0nOtqqRAz1x90vxNbhmSkeYxHVC
+
+https://docs.google.com/presentation/d/17OWCQsGTRsuCrB50njXbTXaEourHgdzVrN0cUshfDXI/edit?slide=id.g88f71ddc4c_0_0#slide=id.g88f71ddc4c_0_0
 
 
